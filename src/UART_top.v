@@ -1,5 +1,8 @@
 `timescale 1ns/10ps
 
+/* Keep these lines commented if you are using Vivado and simply adding 
+the source & sim files without handling `include and `define separately */
+
 //`include "defines.v"
 //`include "baudRateGenerator.v"
 
@@ -101,8 +104,8 @@ module uart_controller #(
         .reset_n (reset_n), 
         .i_Tx_Byte (i_Tx_Byte), 
         .i_Tx_Ready (i_Tx_Ready), 
-        .o_Tx_Done (),              // DNE in TX-RX mode
-        .o_Tx_Active (),            // DNE in TX-RX mode
+        .o_Tx_Done (),              // N/A in TX-RX mode
+        .o_Tx_Active (),            // N/A in TX-RX mode
         .o_Tx_Data (w_Tx_Data_to_Rx)
     );
  
