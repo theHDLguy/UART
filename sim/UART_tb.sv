@@ -1,3 +1,6 @@
+/* This testbench uses only one aspect of SystenVerilog in line 42-43, ie. assigning a packed type to an unpacked type. 
+This can be done in verilog as well by consuming 16 extra lines. Refer to this for more - electronics.stackexchange.com/q/674926/332744 */
+
 `timescale 1ns/10ps
 
 // CLKS_PER_BITS = (Input Frequency {i_clk}/ UART Frequency {Baud Rate} 
