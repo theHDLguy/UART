@@ -2,6 +2,8 @@
 
 This is a UART design in Verilog HDL. The designed UART works in simplex mode or can be configured to work as a Tx/Rx only using conditional compilation through defines.v.
 
+Alternatively, you can access the project through this EDA Playground [link](https://edaplayground.com/x/9NMt).
+
 ## Output
 This is the output of the UART testbench in simplex mode:
 ![image](https://github.com/theHDLguy/UART/assets/76950564/11fe7123-b30e-4436-9265-6727f85ac0e9)
