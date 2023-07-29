@@ -1,15 +1,14 @@
 /* RUN for 756700 ns 
 
-This testbench uses only one aspect of SystenVerilog in line 44-45, ie. assigning a packed type to an unpacked type. 
+This testbench uses only one aspect of SystenVerilog in line 43, ie. assigning a packed type to an unpacked type. 
 This can be done in verilog as well by consuming 16 extra lines. Refer to this for more - electronics.stackexchange.com/q/674926/332744 */
 
 `timescale 1ns/10ps
+`include "defines.v"
+`include "UART_top.v"
 
 // CLKS_PER_BITS = (Input Frequency {i_clk}/ UART Frequency {Baud Rate} 
 // Example : CLKS_PER_BITS = (25 MHz / 115200) = 217 
-
-//`include "defines.v"
-//`include "UART_top.v"
 
 module UART_TB ();
 
@@ -42,7 +41,6 @@ module UART_TB ();
     reg [7:0] Tx_Byte = 0;
     reg Tx_Ready = 0;
     reg [7:0] DataToSend [0:7] = {8'h01, 8'h10, 8'h22, 8'h32, 8'h55, 8'hAA, 8'hAB, 8'h88};
-    reg [7:0] DataToSend_1 [0:7] = {8'h21, 8'h11, 8'h32, 8'h77, 8'hA0, 8'h0B, 8'hBB, 8'hFF};
     reg [7:0] DataReceived [0:7];
     integer ii;
   
